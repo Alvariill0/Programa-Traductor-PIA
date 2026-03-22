@@ -1,0 +1,4 @@
+.env
+artists.csv
+_pycache__/
+__pycache__/

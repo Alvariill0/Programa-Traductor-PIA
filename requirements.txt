@@ -1,0 +1,5 @@
+python-dotenv==1.0.0
+requests==2.31.0
+azure-cognitiveservices-speech==1.28.0
+azure-ai-translation-text==1.0.0
+azure-ai-textanalytics==5.1.0
