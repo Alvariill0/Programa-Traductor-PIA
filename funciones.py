@@ -5,8 +5,8 @@ import azure.cognitiveservices.speech as speechsdk
 #FUNCIONES API TRADUCTOR
 def api_detectar_idioma(texto, endpoint, key, region):
     """
-    Detecta el idioma de un texto usando la API REST de Translator.
-    Devuelve el código de idioma (ej: 'es', 'en')
+        Detecta el idioma de un texto usando la API REST de Translator.
+        Devuelve el código de idioma (ej: 'es', 'en')
     """
     if not texto or len(texto.strip()) == 0:
         return None
@@ -34,7 +34,7 @@ def api_detectar_idioma(texto, endpoint, key, region):
 
 def api_traducir(texto, idioma_origen, idioma_destino, endpoint, key, region):
     """
-    Traduce un texto de un idioma a otro usando la API REST de Translator.
+        Traduce un texto de un idioma a otro usando la API REST de Translator.
     """
     if not texto or not idioma_destino:
         print(" Error: texto o idioma destino vacío")
@@ -67,8 +67,8 @@ def api_traducir(texto, idioma_origen, idioma_destino, endpoint, key, region):
 
 def api_listar_idiomas(endpoint, key, region):
     """
-    Obtiene la lista de idiomas disponibles para traducción.
-    Devuelve un diccionario: {codigo: nombre}
+        Obtiene la lista de idiomas disponibles para traducción.
+        Devuelve un diccionario: {codigo: nombre}
     """
     url = f"{endpoint}/languages?api-version=3.0&scope=translation"
     headers = {
@@ -91,8 +91,8 @@ def api_listar_idiomas(endpoint, key, region):
 def normalizar_idioma_speech(idioma):
     """Convierte códigos de idioma Translator (ej. 'es', 'en') a códigos Speech (ej. 'es-ES', 'en-US').
 
-    Si el idioma ya tiene formato regional (incluye '-') se devuelve tal cual.
-    Si no está en el mapeo fijo se intenta construir con patron generico.
+        Si el idioma ya tiene formato regional (incluye '-') se devuelve tal cual.
+        Si no está en el mapeo fijo se intenta construir con patron generico.
     """
     if not idioma:
         return "es-ES"
